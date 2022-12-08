@@ -4,7 +4,7 @@
 #include<math.h>>
 # define PI           3.14159265358979323846
 
-//----dayRiver----
+//----ALL--Rivers----
 void dayRiver(){
 	//GL_QUADS
     glBegin(GL_QUADS);
@@ -19,6 +19,52 @@ void dayRiver(){
 
 	glEnd();
 }
+
+void eveningRiver(){
+    //GL_QUADS
+    glBegin(GL_QUADS);
+	glColor3ub(191, 201, 202);
+
+    glVertex2f(-1.0f, -0.4f);
+        glColor3ub(93, 109, 126); //color mixing
+	glVertex2f(-1.0f, 0.2f);
+        glColor3ub(133, 146, 158); //color mixing
+	glVertex2f(1.0f, 0.2f);
+        glColor3ub(214, 234, 248); //color mixing
+	glVertex2f(1.0f, -0.15f);
+
+	glEnd();
+}
+
+void nightRiver(){
+    //GL_QUADS
+    glBegin(GL_QUADS);
+	glColor3ub(21, 67, 96);
+
+    glVertex2f(-1.0f, -0.4f);
+	glVertex2f(-1.0f, 0.2f);
+	glVertex2f(1.0f, 0.2f);
+    glColor3ub(133, 193, 233); //color mixing
+	glVertex2f(1.0f, -0.15f);
+
+	glEnd();
+}
+
+void rainyRiver(){
+    //GL_QUADS
+    glBegin(GL_QUADS);
+	glColor3ub(21, 67, 96);
+
+    glVertex2f(-1.0f, -0.4f);
+	glVertex2f(-1.0f, 0.2f);
+        glColor3ub(153, 163, 164); //color mixing
+	glVertex2f(1.0f, 0.2f);
+	glVertex2f(1.0f, -0.15f);
+
+	glEnd();
+}
+
+//-----All---sky-----//
 
 void daySky(){
     //GL_QUADS
@@ -35,6 +81,125 @@ void daySky(){
 	glEnd();
 }
 
+void eveningSky(){
+    //GL_QUADS
+    glBegin(GL_QUADS);
+    glColor4f(0.8f, 0.7f, 0.5f, 1.0f);
+    glVertex2f(-1.1f, 1.0f);
+        glColor3ub(235, 222, 240); //color mixing
+	glVertex2f(1.1f, 1.0f);
+        glColor3ub(250, 215, 160); //color mixing
+	glVertex2f(1.1f, -0.1f);
+        glColor3ub(215, 189, 226); //color mixing
+	glVertex2f(-1.1f, -0.4f);
+	glEnd();
+}
+
+void rainySky(){
+    //GL_QUADS
+    glBegin(GL_QUADS);
+    glColor3ub(242, 243, 244);
+    glVertex2f(-1.1f, 1.0f);
+        glColor3ub(178, 186, 187); //color mixing
+	glVertex2f(1.1f, 1.0f);
+        glColor3ub(113, 125, 126); //color mixing
+	glVertex2f(1.1f, -0.1f);
+        glColor3ub(97, 106, 107); //color mixing
+	glVertex2f(-1.1f, -0.4f);
+
+	glEnd();
+}
+
+void chair(){
+
+    //Chair Umbrella
+    glBegin(GL_TRIANGLES);
+        glColor3ub(188 ,143 ,143);
+	glVertex2f(1.0f,  -0.2f);
+	glVertex2f(0.4f, -0.2);
+	glVertex2f(0.7f, 0.1f);
+	glEnd();
+
+    //Chair Umbrella Stand
+    glBegin(GL_QUADS);
+        glColor3ub(139, 69, 19);
+	glVertex2f(0.715f, -0.7f);
+	glVertex2f(0.685f, -0.7f);
+	glVertex2f(0.685f, -0.2f);
+	glVertex2f(0.715f, -0.2f);
+	glEnd();
+
+
+	//----------------chair------------
+	//sit
+    glBegin(GL_QUADS);
+        glColor3ub(205 ,186 ,150);
+	glVertex2f(0.65f, -0.5f);
+	glVertex2f(0.4f, -0.5f);
+	glVertex2f(0.35f, -0.55f);
+	glVertex2f(0.6f, -0.55f);
+	glEnd();
+	//sit left label
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.6f, -0.58f);
+	glVertex2f(0.6f, -0.55f);
+	glVertex2f(0.35f, -0.55f);
+	glVertex2f(0.35f, -0.58);
+	glEnd();
+	//sit back label
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.65f, -0.50f);
+	glVertex2f(0.65f, -0.53f);
+	glVertex2f(0.6f, -0.58f);
+	glVertex2f(0.6f, -0.55f);
+	glEnd();
+	//chair relaxer
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.65f, -0.53f);
+	glVertex2f(0.6f, -0.58f);
+	glVertex2f(0.63f, -0.48);
+    glVertex2f(0.68f, -0.44);
+	glEnd();
+
+    //chair legs - left front
+     glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.35f, -0.58);
+	glVertex2f(0.37f, -0.58f);
+	glVertex2f(0.37f, -0.65f);
+	glVertex2f(0.35f, -0.65);
+	glEnd();
+	//chair legs - right front
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.4f, -0.58);
+	glVertex2f(0.42f, -0.58f);
+	glVertex2f(0.42f, -0.62f);
+	glVertex2f(0.4f, -0.62);
+	glEnd();
+    //chair legs - right back
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.645f, -0.52f);
+	glVertex2f(0.645f, -0.6f);
+	glVertex2f(0.625f, -0.6f);
+	glVertex2f(0.625f, -0.52);
+	glEnd();
+    //chair legs - left back
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.6f, -0.58f);
+	glVertex2f(0.6f, -0.65f);
+	glVertex2f(0.58f, -0.65f);
+	glVertex2f(0.58f, -0.58);
+	glEnd();
+
+}
+
+//All==Beach==//
 void dayBeach(){
 	//GL_QUADS
     glBegin(GL_QUADS);
@@ -42,6 +207,36 @@ void dayBeach(){
     glVertex2f(-1.0f, -0.3f); //top left
         glColor3ub(214, 234, 248);
     glVertex2f(1.0f, -0.08f); //top right
+        glColor3ub(246, 221, 204);
+	glVertex2f(1.0f, -1.0f); //down right
+        glColor3ub(246, 221, 204);
+	glVertex2f(-1.0f, -1.0f); //down left
+
+	glEnd();
+}
+
+void nightBeach(){
+	//GL_QUADS
+    glBegin(GL_QUADS);
+        glColor3ub(234, 237, 237);
+    glVertex2f(-1.0f, -0.4f); //top left
+        glColor3ub(234, 237, 237);
+    glVertex2f(1.0f, -0.1f); //top right
+        glColor3ub(171, 178, 185);
+	glVertex2f(1.0f, -1.0f); //down right
+        glColor3ub(171, 178, 185);
+	glVertex2f(-1.0f, -1.0f); //down left
+
+	glEnd();
+}
+
+void eveningBeach(){
+	//GL_QUADS
+    glBegin(GL_QUADS);
+        glColor3ub(213, 219, 219);
+    glVertex2f(-1.0f, -0.4f); //top left
+        glColor3ub(213, 219, 219);
+    glVertex2f(1.0f, -0.15f); //top right
         glColor3ub(246, 221, 204);
 	glVertex2f(1.0f, -1.0f); //down right
         glColor3ub(246, 221, 204);
@@ -270,6 +465,7 @@ void star(){
 }
 
 //---------calling function-----------
+// ------ All the days-----------------
 
 void day() {
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // Set background color to black and opaque
@@ -301,6 +497,7 @@ void day() {
 
     dayRiver();
     dayBeach();
+    chair();
 
 
 
@@ -341,10 +538,12 @@ void evening(){
 			glColor3ub(235, 152, 78);
 		}
 	glEnd();
+	eveningBeach();
+	eveningSky();
+    eveningRiver();
 
 
-
-
+    chair();
 
 
 
@@ -419,8 +618,9 @@ void night() {
 	glEnd();
 
 	//----------
-
-
+	nightBeach();
+    nightRiver();
+    chair();
 
    glFlush();
 }
@@ -433,74 +633,14 @@ void rain(){
 
 
 
-    //------boat1-------------
-    glBegin(GL_QUADS);
-	glColor3ub(184,134,11);
-
-	glVertex2f(0.2f, -0.1f);
-	glVertex2f(0.0f, -0.1f);
-	glVertex2f(-0.05f, 0.0f);
-	glVertex2f(0.25f, 0.0f);
-	glEnd();
-
-    glBegin(GL_LINES);
-	glColor3ub(139, 69 ,19);
-	glVertex2f(0.1f, 0.0f);
-	glVertex2f(0.1f, 0.2f);
 
 	glEnd();
 
-    glBegin(GL_LINES);
-	glColor3ub(139 ,69 ,19);
-	glVertex2f(0.0f, 0.0f);
-	glVertex2f(0.1f, 0.2f);
 
-	glEnd();
+	rainySky();
+    rainyRiver();
 
-    glBegin(GL_TRIANGLES);
-	glColor3ub(205,92,92);
-
-	glVertex2f(0.1f,  0.2f);
-	glVertex2f(0.2f, 0.04f);
-	glVertex2f(0.1f, 0.04f);
-
-	glEnd();
-
-    //----------boat2------------
-
-    glBegin(GL_QUADS);
-	glColor3ub(178, 34, 34);
-
-	glVertex2f(0.15f, 0.15f);
-	glVertex2f(0.45f, 0.15f);
-	glVertex2f(0.4f, 0.05f);
-	glVertex2f(0.2f, 0.05f);
-
-	glEnd();
-
-    glBegin(GL_LINES);
-	glColor3ub(139, 69 ,19);
-	glVertex2f(0.3f, 0.15f);
-	glVertex2f(0.3f, 0.35f);
-
-	glEnd();
-
-    glBegin(GL_LINES);
-	glColor3ub(139 ,69 ,19);
-	glVertex2f(0.3f, 0.35f);
-	glVertex2f(0.15f, 0.15f);
-
-	glEnd();
-
-    glBegin(GL_TRIANGLES);
-	glColor3ub(205,92,92);
-
-	glVertex2f(0.3f, 0.35f);
-	glVertex2f(0.45f, 0.2f);
-	glVertex2f(0.3f, 0.2f);
-
-	glEnd();
-
+    chair();
 
 
 
