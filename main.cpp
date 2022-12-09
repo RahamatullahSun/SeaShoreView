@@ -245,8 +245,274 @@ void eveningBeach(){
 	glEnd();
 }
 
+//---Elements---
+
+GLfloat position = 0.0f;
+//GLfloat speed = 0.009f;
+
+GLfloat positionCloud1 = 0.4f;
+GLfloat speed = 0.009f; //initially declared speed
+
+void update(int value) {
+
+    if(position <-1.0)
+        position = 1.0f;
+
+    position -= speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, update, 0);
+}
+void boat1(){
+
+    glPushMatrix();
+    glTranslatef(position,0.0f, 0.0f);
+
+    glBegin(GL_QUADS);
+	glColor3ub(184,134,11);
+
+	glVertex2f(0.2f, -0.1f);
+	glVertex2f(0.0f, -0.1f);
+	glVertex2f(-0.05f, 0.0f);
+	glVertex2f(0.25f, 0.0f);
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139, 69 ,19);
+	glVertex2f(0.1f, 0.0f);
+	glVertex2f(0.1f, 0.2f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139 ,69 ,19);
+	glVertex2f(0.0f, 0.0f);
+	glVertex2f(0.1f, 0.2f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(205,92,92);
+
+	glVertex2f(0.1f,  0.2f);
+	glVertex2f(0.2f, 0.04f);
+	glVertex2f(0.1f, 0.04f);
+
+	glEnd();
+glPopMatrix();
+
+
+
+   glFlush();
+
+}
+
+void Bigtree(){
+
+    glBegin(GL_QUADS);
+	glColor3ub(139, 71, 38);
+
+	glVertex2f(-0.8f, -0.8f);
+	glVertex2f(-1.0f, -0.8f);
+	glVertex2f(-0.95f, 0.3f);
+	glVertex2f(-0.9f, 0.3f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(46, 139, 87);
+
+	glVertex2f(-0.6f, -0.4f);
+	glVertex2f(-0.925f, 0.1f);
+	glVertex2f(-0.925f, 0.3f);
+
+	glEnd();
+
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(46, 139, 87);
+
+	glVertex2f(-0.4f, -0.3f);
+	glVertex2f(-0.925f, 0.1f);
+	glVertex2f(-0.925f, 0.3f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(46, 139, 87);
+
+	glVertex2f(-0.5f, -0.1f);
+	glVertex2f(-0.925f, 0.1f);
+	glVertex2f(-0.925f, 0.3f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(46, 139, 87);
+
+	glVertex2f(-0.4f, 0.1f);
+	glVertex2f(-0.925f, 0.1f);
+	glVertex2f(-0.925f, 0.3f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(46, 139, 87);
+
+	glVertex2f(-0.4f, 0.5f);
+	glVertex2f(-0.925f, 0.0f);
+	glVertex2f(-0.925f, 0.3f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(46, 139, 87);
+
+	glVertex2f(-0.6f, 0.8f);
+	glVertex2f(-0.925f, 0.0f);
+	glVertex2f(-0.925f, 0.3f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(46, 139, 87);
+
+	glVertex2f(-0.8f, 0.9f);
+	glVertex2f(-0.95f, 0.3f);
+	glVertex2f(-0.925f, 0.1f);
+
+	glEnd();
+
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(46, 139, 87);
+
+	glVertex2f(-1.0f, 0.9f);
+	glVertex2f(-0.9f, 0.3f);
+	glVertex2f(-0.925f, 0.1f);
+
+	glEnd();
+
+    glBegin(GL_QUADS);
+	glColor3ub(46, 139, 87);
+
+	glVertex2f(-1.0f, 0.0f);
+	glVertex2f(-1.0f, 0.4f);
+	glVertex2f(-0.925f, 0.3f);
+	glVertex2f(-0.925f, 0.0f);
+
+	glEnd();
+}
+
 void init() {
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+}
+
+//GLfloat positionCloud1 = 0.4f;
+//GLfloat speed = 0.009f; //declared globally for every movable object... ... ...SPEED... ... ...!!! !!! !!!
+
+void updateCloud1(int value) {
+
+    if(positionCloud1 <-1.0)
+        positionCloud1 = 1.0f;
+
+    positionCloud1 -= speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, updateCloud1, 0);
+}
+void cloud1(){
+
+    glPushMatrix();
+    glTranslatef(-positionCloud1,0.0f,0.0f);
+
+
+    //circle-1
+	int jeight;
+	GLfloat p8=.34f; GLfloat q8=.8f; GLfloat radius8 =.08f;
+	int triangleAmount8 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi8 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p8, q8); // center of circle
+		for(jeight = 0; jeight <= triangleAmount8; jeight++) {
+			glVertex2f(
+		            p8 + (radius8 * cos(jeight *  twicePi8 / triangleAmount8)),
+			    q8 + (radius8 * sin(jeight * twicePi8 / triangleAmount8))
+			);
+		}
+	glEnd();
+
+	//circle-2
+	int jnine;
+
+	GLfloat p9=.41f; GLfloat q9=.87f; GLfloat radius9 =.07f;
+	int triangleAmount9 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi9 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p9, q9); // center of circle
+		for(jnine = 0; jnine <= triangleAmount9; jnine++) {
+			glVertex2f(
+		            p9 + (radius9 * cos(jnine *  twicePi9 / triangleAmount9)),
+			    q9 + (radius9 * sin(jnine * twicePi9 / triangleAmount9))
+			);
+		}
+	glEnd();
+
+	//circle-3
+	int jten;
+
+	GLfloat p10=.30f; GLfloat q10=.87f; GLfloat radius10 =.08f;
+	int triangleAmount10 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi10 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p10, q10); // center of circle
+		for(jten = 0; jten <= triangleAmount10; jten++) {
+			glVertex2f(
+		            p10 + (radius10 * cos(jten *  twicePi10 / triangleAmount10)),
+			    q10 + (radius10* sin(jten * twicePi10 / triangleAmount10))
+			);
+		}
+	glEnd();
+
+	//circle-4
+	int jeleven;
+
+	GLfloat p11=.45f; GLfloat q11=.8f; GLfloat radius11 =.08f;
+	int triangleAmount11 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi11 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p11, q11); // center of circle
+		for(jeleven = 0; jeleven <= triangleAmount11; jeleven++) {
+			glVertex2f(
+		            p11 + (radius11 * cos(jeleven *  twicePi11 / triangleAmount11)),
+			    q11 + (radius11* sin(jeleven * twicePi11 / triangleAmount11))
+			);
+		}
+	glEnd();
+
+	glPopMatrix();
+
+	glFlush();
 }
 
 
@@ -495,10 +761,12 @@ void day() {
 		}
 	glEnd();
 
+    cloud1();
     dayRiver();
     dayBeach();
     chair();
-
+    Bigtree();
+    boat1();
 
 
 
@@ -513,12 +781,6 @@ void evening(){
 	glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
 
     //----front()--------------;
-
-
-
-
-
-
 
     glColor3ub(238 ,173,14);
 	int j;
@@ -538,9 +800,12 @@ void evening(){
 			glColor3ub(235, 152, 78);
 		}
 	glEnd();
+
 	eveningBeach();
 	eveningSky();
     eveningRiver();
+    Bigtree();
+    boat1();
 
 
     chair();
@@ -621,6 +886,8 @@ void night() {
 	nightBeach();
     nightRiver();
     chair();
+    Bigtree();
+    boat1();
 
    glFlush();
 }
@@ -641,8 +908,9 @@ void rain(){
     rainyRiver();
 
     chair();
-
-
+    Bigtree();
+    cloud1();
+    boat1();
 
 
 
@@ -685,9 +953,11 @@ void handleKeypress(unsigned char key, int x, int y) {
 //-----speed control----
 
     case 'a'://--------stop----------
+    speed = 0.0f;
 
     break;
     case 's'://--------start-------------
+    speed = 0.01f;
 
 
     break;
