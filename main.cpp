@@ -253,6 +253,9 @@ GLfloat position = 0.0f;
 GLfloat positionCloud1 = 0.4f;
 GLfloat speed = 0.009f; //initially declared speed
 
+GLfloat position1 = 0.0f;
+//GLfloat speed = 0.1f;
+
 void update(int value) {
 
     if(position <-1.0)
@@ -302,6 +305,64 @@ void boat1(){
 
 	glEnd();
 glPopMatrix();
+
+
+
+   glFlush();
+
+}
+
+void update1(int value) {
+
+    if(position1 <-1.0)
+        position1 = 1.0f;
+
+    position1 -= speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, update1, 0);
+}
+
+void boat2(){
+    glPushMatrix();
+    glTranslatef(position1,0.0f, 0.0f);
+
+    glBegin(GL_QUADS);
+	glColor3ub(178, 34, 34);
+
+	glVertex2f(0.15f, 0.15f);
+	glVertex2f(0.45f, 0.15f);
+	glVertex2f(0.4f, 0.05f);
+	glVertex2f(0.2f, 0.05f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139, 69 ,19);
+	glVertex2f(0.3f, 0.15f);
+	glVertex2f(0.3f, 0.35f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139 ,69 ,19);
+	glVertex2f(0.3f, 0.35f);
+	glVertex2f(0.15f, 0.15f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(205,92,92);
+
+	glVertex2f(0.3f, 0.35f);
+	glVertex2f(0.45f, 0.2f);
+	glVertex2f(0.3f, 0.2f);
+
+	glEnd();
+
+	glPopMatrix();
 
 
 
@@ -767,7 +828,7 @@ void day() {
     chair();
     Bigtree();
     boat1();
-
+    boat2();
 
 
 
@@ -809,7 +870,7 @@ void evening(){
 
 
     chair();
-
+    boat2();
 
 
 	glFlush();
@@ -888,6 +949,7 @@ void night() {
     chair();
     Bigtree();
     boat1();
+    boat2();
 
    glFlush();
 }
@@ -911,7 +973,7 @@ void rain(){
     Bigtree();
     cloud1();
     boat1();
-
+    boat2();
 
 
 
