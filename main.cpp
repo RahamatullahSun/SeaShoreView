@@ -1125,31 +1125,484 @@ void night() {
    glFlush();
 }
 
+GLfloat positionRain = 0.0f;
+GLfloat speed1 = 0.6f;
+
+void updateRain(int value) {
+
+    if(positionRain >1.0)
+        positionRain = -1.0f;
+
+    positionRain += speed1;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, updateRain, 0);
+}
+
+void displayRain(){
+
+    glPushMatrix();
+    glTranslatef(0.0f,-positionRain, 0.0f);
+
+//line1
+    glBegin(GL_LINES);
+	glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.9f, 1.0f);
+	glVertex2f(-1.0f, 0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.7f, 1.0f);
+	glVertex2f(-0.8f, 0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.5f, 1.0f);
+	glVertex2f(-0.6f, 0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.3f, 1.0f);
+	glVertex2f(-0.4f, 0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.1f, 1.0f);
+	glVertex2f(-0.2f, 0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.1f, 1.0f);
+	glVertex2f(0.0f, 0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.3f, 1.0f);
+	glVertex2f(0.2f, 0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.5f, 1.0f);
+	glVertex2f(0.4f, 0.8f);
+
+   glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.7f, 1.0f);
+	glVertex2f(0.6f, 0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.9f, 1.0f);
+	glVertex2f(0.8f, 0.8f);
+
+	//line2
+    glBegin(GL_LINES);
+	glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.9f, 0.7f);
+	glVertex2f(-1.0f, 0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.7f, 0.7f);
+	glVertex2f(-0.8f, 0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.5f, 0.7f);
+	glVertex2f(-0.6f, 0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.3f, 0.7f);
+	glVertex2f(-0.4f, 0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.1f, 0.7f);
+	glVertex2f(-0.2f, 0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.1f, 0.7f);
+	glVertex2f(0.0f, 0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.3f, 0.7f);
+	glVertex2f(0.2f, 0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.5f, 0.7f);
+	glVertex2f(0.4f, 0.5f);
+
+   glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.7f, 0.7f);
+	glVertex2f(0.6f, 0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.9f, 0.7f);
+	glVertex2f(0.8f, 0.5f);
+
+
+	//line3
+    glBegin(GL_LINES);
+	glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.9f, 0.4f);
+	glVertex2f(-1.0f, 0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.7f, 0.4f);
+	glVertex2f(-0.8f, 0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.5f, 0.4f);
+	glVertex2f(-0.6f, 0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.3f, 0.4f);
+	glVertex2f(-0.4f, 0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.1f, 0.4f);
+	glVertex2f(-0.2f, 0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.1f, 0.4f);
+	glVertex2f(0.0f, 0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.3f, 0.4f);
+	glVertex2f(0.2f, 0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.5f, 0.4f);
+	glVertex2f(0.4f, 0.2f);
+
+   glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.7f, 0.4f);
+	glVertex2f(0.6f, 0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.9f, 0.4f);
+	glVertex2f(0.8f, 0.2f);
+
+
+		//line4
+    glBegin(GL_LINES);
+	glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.9f, 0.0f);
+	glVertex2f(-1.0f, -0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.7f, 0.0f);
+	glVertex2f(-0.8f, -0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.5f, 0.0f);
+	glVertex2f(-0.6f, -0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.3f, 0.0f);
+	glVertex2f(-0.4f, -0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.1f, 0.0f);
+	glVertex2f(-0.2f, -0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.1f, 0.0f);
+	glVertex2f(0.0f, -0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.3f, 0.0f);
+	glVertex2f(0.2f,-0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.5f, 0.0f);
+	glVertex2f(0.4f, -0.2f);
+
+   glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.7f, 0.0f);
+	glVertex2f(0.6f, -0.2f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.9f, 0.0f);
+	glVertex2f(0.8f, -0.2f);
+
+		//line4
+    glBegin(GL_LINES);
+	glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.9f, -0.3f);
+	glVertex2f(-1.0f, -0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.7f, -0.3f);
+	glVertex2f(-0.8f, -0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.5f, -0.3f);
+	glVertex2f(-0.6f, -0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.3f, -0.3f);
+	glVertex2f(-0.4f, -0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.1f, -0.3f);
+	glVertex2f(-0.2f, -0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.1f, -0.3f);
+	glVertex2f(0.0f, -0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.3f, -0.3f);
+	glVertex2f(0.2f,-0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.5f, -0.3f);
+	glVertex2f(0.4f, -0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.7f, -0.3f);
+	glVertex2f(0.6f, -0.5f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.9f, -0.3f);
+	glVertex2f(0.8f, -0.5f);
+
+    //line5
+	glBegin(GL_LINES);
+	glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.9f, -0.6f);
+	glVertex2f(-1.0f, -0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.7f, -0.6f);
+	glVertex2f(-0.8f, -0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.5f, -0.6f);
+	glVertex2f(-0.6f, -0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.3f, -0.6f);
+	glVertex2f(-0.4f, -0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.1f, -0.6f);
+	glVertex2f(-0.2f, -0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.1f, -0.6f);
+	glVertex2f(0.0f, -0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.3f, -0.6f);
+	glVertex2f(0.2f,-0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.5f, -0.6f);
+	glVertex2f(0.4f, -0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.7f, -0.6f);
+	glVertex2f(0.6f, -0.8f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.9f, -0.6f);
+	glVertex2f(0.8f, -0.8f);
+
+	    //line6
+	glBegin(GL_LINES);
+	glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.9f, -0.9f);
+	glVertex2f(-1.0f, -1.0f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.7f, -0.9f);
+	glVertex2f(-0.8f, -1.0f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.5f, -0.9f);
+	glVertex2f(-0.6f, -1.0f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.3f, -0.9f);
+	glVertex2f(-0.4f, -1.0f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(-0.1f, -0.9f);
+	glVertex2f(-0.2f, -1.0f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.1f, -0.9f);
+	glVertex2f(0.0f, -1.0f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.3f, -0.9f);
+	glVertex2f(0.2f,-1.0f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.5f, -0.9f);
+	glVertex2f(0.4f, -1.0f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.7f, -0.9f);
+	glVertex2f(0.6f, -1.0f);
+
+    glColor3f(0.8f, 0.8f, 0.8f);
+
+	glVertex2f(0.9f, -0.9f);
+	glVertex2f(0.8f, -1.0f);
+	glEnd();
+
+    glPopMatrix();
+
+    glFlush();
+}
 
 void rain(){
-     glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
+glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
      glClear(GL_COLOR_BUFFER_BIT);
     //fornt();
+    rainySky();
+    cloud1();
+    cloud2();
+    rainyRiver();
 
+    //------boat1-------------
+    glBegin(GL_QUADS);
+	glColor3ub(184,134,11);
 
+	glVertex2f(0.2f, -0.1f);
+	glVertex2f(0.0f, -0.1f);
+	glVertex2f(-0.05f, 0.0f);
+	glVertex2f(0.25f, 0.0f);
+	glEnd();
 
+    glBegin(GL_LINES);
+	glColor3ub(139, 69 ,19);
+	glVertex2f(0.1f, 0.0f);
+	glVertex2f(0.1f, 0.2f);
 
 	glEnd();
 
+    glBegin(GL_LINES);
+	glColor3ub(139 ,69 ,19);
+	glVertex2f(0.0f, 0.0f);
+	glVertex2f(0.1f, 0.2f);
 
-	rainySky();
-    rainyRiver();
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(205,92,92);
+
+	glVertex2f(0.1f,  0.2f);
+	glVertex2f(0.2f, 0.04f);
+	glVertex2f(0.1f, 0.04f);
+
+	glEnd();
+
+    //----------boat2------------
+
+    glBegin(GL_QUADS);
+	glColor3ub(178, 34, 34);
+
+	glVertex2f(0.15f, 0.15f);
+	glVertex2f(0.45f, 0.15f);
+	glVertex2f(0.4f, 0.05f);
+	glVertex2f(0.2f, 0.05f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139, 69 ,19);
+	glVertex2f(0.3f, 0.15f);
+	glVertex2f(0.3f, 0.35f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139 ,69 ,19);
+	glVertex2f(0.3f, 0.35f);
+	glVertex2f(0.15f, 0.15f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(205,92,92);
+
+	glVertex2f(0.3f, 0.35f);
+	glVertex2f(0.45f, 0.2f);
+	glVertex2f(0.3f, 0.2f);
+
+	glEnd();
+
+    Bigtree();
+
+
+    displayRain();
 
     chair();
-    Bigtree();
-    cloud1();
-    cloud2();
-    boat1();
-    boat2();
-
-
-
     glFlush();
+
 
 }
 
@@ -1216,6 +1669,7 @@ int main(int argc, char** argv) {
     glutKeyboardFunc(handleKeypress);
     glutTimerFunc(100, updateCloud1, 0);
     glutTimerFunc(100, updateCloud2, 0);
+    glutTimerFunc(100, updateRain, 0);
 
 
 

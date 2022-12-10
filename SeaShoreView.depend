@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1670671128 source:g:\other computers\my laptop\new volume [e]\lectures\current\computer graphics\project\seashoreview\main.cpp
+1670671524 source:g:\other computers\my laptop\new volume [e]\lectures\current\computer graphics\project\seashoreview\main.cpp
 	<cstdio>
 	<windows.h>
 	<GL/glut.h>
