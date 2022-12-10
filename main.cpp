@@ -965,7 +965,7 @@ void star(){
 // ------ All the days-----------------
 
 void day() {
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // Set background color to black and opaque
+		glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // Set background color to black and opaque
 	glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
 
     //fornt();
@@ -996,13 +996,10 @@ void day() {
     cloud2();
     dayRiver();
     dayBeach();
-    chair();
-    Bigtree();
     boat1();
     boat2();
-
-
-
+    chair();
+    Bigtree();
 
 	glFlush();  // Render now
 }
@@ -1053,46 +1050,11 @@ void night() {
   glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
    glClear(GL_COLOR_BUFFER_BIT);
 
-
-
-
+    nightRiver();
+    nightBeach();
     star();
-
-
-
-    //------boat1-------------
-    glBegin(GL_QUADS);
-	glColor3ub(184,134,11);
-
-	glVertex2f(0.2f, -0.1f);
-	glVertex2f(0.0f, -0.1f);
-	glVertex2f(-0.05f, 0.0f);
-	glVertex2f(0.25f, 0.0f);
-	glEnd();
-
-    glBegin(GL_LINES);
-	glColor3ub(139, 69 ,19);
-	glVertex2f(0.1f, 0.0f);
-	glVertex2f(0.1f, 0.2f);
-
-	glEnd();
-
-    glBegin(GL_LINES);
-	glColor3ub(139 ,69 ,19);
-	glVertex2f(0.0f, 0.0f);
-	glVertex2f(0.1f, 0.2f);
-
-	glEnd();
-
-    glBegin(GL_TRIANGLES);
-	glColor3ub(205,92,92);
-
-	glVertex2f(0.1f,  0.2f);
-	glVertex2f(0.2f, 0.04f);
-	glVertex2f(0.1f, 0.04f);
-
-	glEnd();
-
+    boat1();
+    boat2();
 
     //----------------moon--------
     glColor3ub(255, 255 ,255);
@@ -1115,12 +1077,8 @@ void night() {
 	glEnd();
 
 	//----------
-	nightBeach();
-    nightRiver();
     chair();
     Bigtree();
-    boat1();
-    boat2();
 
    glFlush();
 }
@@ -1670,6 +1628,8 @@ int main(int argc, char** argv) {
     glutTimerFunc(100, updateCloud1, 0);
     glutTimerFunc(100, updateCloud2, 0);
     glutTimerFunc(100, updateRain, 0);
+    glutTimerFunc(100, update, 0);
+    glutTimerFunc(100, update1, 0);
 
 
 
