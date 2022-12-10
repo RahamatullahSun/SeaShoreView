@@ -257,7 +257,7 @@ GLfloat speed = 0.009f; //initially declared speed
 GLfloat position1 = 0.0f;
 //GLfloat speed = 0.1f;
 
-void update(int value) {
+void updateBoat1(int value) {
 
     if(position <-1.0)
         position = 1.0f;
@@ -267,7 +267,7 @@ void update(int value) {
 	glutPostRedisplay();
 
 
-	glutTimerFunc(100, update, 0);
+	glutTimerFunc(100, updateBoat1, 0);
 }
 void updateCloud1(int value) {
 
@@ -583,7 +583,7 @@ glPopMatrix();
 
 }
 
-void update1(int value) {
+void updateBoat2(int value) {
 
     if(position1 <-1.0)
         position1 = 1.0f;
@@ -593,7 +593,7 @@ void update1(int value) {
 	glutPostRedisplay();
 
 
-	glutTimerFunc(100, update1, 0);
+	glutTimerFunc(100, updateBoat2, 0);
 }
 
 void boat2(){
@@ -1628,8 +1628,8 @@ int main(int argc, char** argv) {
     glutTimerFunc(100, updateCloud1, 0);
     glutTimerFunc(100, updateCloud2, 0);
     glutTimerFunc(100, updateRain, 0);
-    glutTimerFunc(100, update, 0);
-    glutTimerFunc(100, update1, 0);
+    glutTimerFunc(100, updateBoat1, 0);
+    glutTimerFunc(100, updateBoat2, 0);
 
 
 
