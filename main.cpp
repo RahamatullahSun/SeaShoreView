@@ -836,7 +836,253 @@ void Bigtree(){
 void init() {
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 }
+GLfloat positionBird = 0.0f;
 
+void updateBird(int value)
+{
+
+	if (positionBird > 1.0)
+		positionBird = -1.0f;
+
+	positionBird += speed;
+
+	glutPostRedisplay();
+
+	glutTimerFunc(100, updateBird, 0);
+}
+
+void bird1()
+{
+	// bird-1
+	glPushMatrix();
+	glTranslatef(positionBird, 0.0f, 0.0f);
+	// bird left wing
+	glBegin(GL_TRIANGLES);
+	glColor3ub(248, 196, 113); // light orange
+	glVertex2f(0.37f, 0.42f);
+	glVertex2f(0.32f, 0.44f);
+	glVertex2f(0.37f, 0.4f);
+	glEnd();
+
+	// bird leaps
+	glBegin(GL_TRIANGLES);
+	glColor3ub(34, 153, 84); // green
+	glVertex2f(0.45f, 0.41f);
+	glVertex2f(0.45f, 0.43f);
+	glVertex2f(0.47f, 0.41f);
+	glEnd();
+
+	// bird legs
+	glBegin(GL_LINES);
+	glColor3ub(44, 62, 80); // black
+	glVertex2f(0.37f, 0.36f);
+	glVertex2f(0.39f, 0.37f);
+	glEnd();
+	glBegin(GL_LINES);
+	glColor3ub(44, 62, 80); // black
+	glVertex2f(0.39f, 0.35f);
+	glVertex2f(0.41f, 0.37f);
+	glEnd();
+
+	// circle-1 --- bird body
+	int i;
+	GLfloat x = .4f;
+	GLfloat y = .4f;
+	GLfloat radius = .04f;
+	int triangleAmount = 20; // # of triangles used to draw circle
+
+	// GLfloat radius = 0.8f; //radius
+	GLfloat twicePi = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3ub(213, 244, 13); // yellow
+	glVertex2f(x, y);		  // center of circle
+	for (i = 0; i <= triangleAmount; i++)
+	{
+		glVertex2f(
+			x + (radius * cos(i * twicePi / triangleAmount)),
+			y + (radius * sin(i * twicePi / triangleAmount)));
+	}
+	glEnd();
+
+	// circle-2 --- bird head
+	int i1;
+	GLfloat x1 = .44f;
+	GLfloat y1 = .42f;
+	GLfloat radius1 = .02f;
+	int triangleAmount1 = 20; // # of triangles used to draw circle
+
+	// GLfloat radius = 0.8f; //radius
+	GLfloat twicePi1 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3ub(243, 156, 18); // orange
+	glVertex2f(x1, y1);		  // center of circle
+	for (i1 = 0; i1 <= triangleAmount1; i1++)
+	{
+		glVertex2f(
+			x1 + (radius1 * cos(i1 * twicePi1 / triangleAmount1)),
+			y1 + (radius1 * sin(i1 * twicePi1 / triangleAmount1)));
+	}
+	glEnd();
+
+	// circle-3 --- bird eye
+	int i11;
+	GLfloat x11 = .45f;
+	GLfloat y11 = .42f;
+	GLfloat radius11 = .005f;
+	int triangleAmount11 = 20; // # of triangles used to draw circle
+
+	// GLfloat radius = 0.8f; //radius
+	GLfloat twicePi11 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3ub(39, 55, 70); // black
+	glVertex2f(x11, y11);	// center of circle
+	for (i11 = 0; i11 <= triangleAmount11; i11++)
+	{
+		glVertex2f(
+			x11 + (radius11 * cos(i11 * twicePi11 / triangleAmount11)),
+			y11 + (radius11 * sin(i11 * twicePi11 / triangleAmount11)));
+	}
+	glEnd();
+
+	// bird right wing
+	glBegin(GL_TRIANGLES);
+	glColor3ub(248, 196, 113); // light orange
+	glVertex2f(0.4f, 0.42f);
+	glVertex2f(0.35f, 0.45f);
+	glVertex2f(0.4f, 0.4f);
+	glEnd();
+
+	glPopMatrix();
+
+	glFlush();
+}
+
+GLfloat positionBird2 = 0.0f;
+
+void updateBird2(int value)
+{
+
+	if (positionBird2 > 1.0)
+		positionBird2 = -1.0f;
+
+	positionBird2 += speed;
+
+	glutPostRedisplay();
+
+	glutTimerFunc(100, updateBird2, 0);
+}
+void bird2()
+{
+	// bird-2
+
+	glPushMatrix();
+	glTranslatef(positionBird2, 0.0f, 0.0f);
+
+	// bird left wing
+	glBegin(GL_TRIANGLES);
+	glColor3ub(248, 196, 113); // light orange
+	glVertex2f(0.57f, 0.62f);
+	glVertex2f(0.52f, 0.63f);
+	glVertex2f(0.57f, 0.6f);
+	glEnd();
+
+	// bird leaps
+	glBegin(GL_TRIANGLES);
+	glColor3ub(34, 153, 84); // green
+	glVertex2f(0.65f, 0.61f);
+	glVertex2f(0.65f, 0.63f);
+	glVertex2f(0.67f, 0.61f);
+	glEnd();
+
+	// bird legs
+	glBegin(GL_LINES);
+	glColor3ub(44, 62, 80); // black
+	glVertex2f(0.57f, 0.56f);
+	glVertex2f(0.59f, 0.57f);
+	glEnd();
+	glBegin(GL_LINES);
+	glColor3ub(44, 62, 80); // black
+	glVertex2f(0.59f, 0.55f);
+	glVertex2f(0.61f, 0.57f);
+	glEnd();
+
+	// circle-1 --- bird body
+	int i2;
+	GLfloat x2 = .6f;
+	GLfloat y2 = .6f;
+	GLfloat radius2 = .04f;
+	int triangleAmount2 = 20; // # of triangles used to draw circle
+
+	// GLfloat radius = 0.8f; //radius
+	GLfloat twicePi2 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3ub(213, 244, 13); // yellow
+	glVertex2f(x2, y2);		  // center of circle
+	for (i2 = 0; i2 <= triangleAmount2; i2++)
+	{
+		glVertex2f(
+			x2 + (radius2 * cos(i2 * twicePi2 / triangleAmount2)),
+			y2 + (radius2 * sin(i2 * twicePi2 / triangleAmount2)));
+	}
+	glEnd();
+
+	// circle-2 --- bird head
+	int i12;
+	GLfloat x12 = .64f;
+	GLfloat y12 = .62f;
+	GLfloat radius12 = .02f;
+	int triangleAmount12 = 20; // # of triangles used to draw circle
+
+	// GLfloat radius = 0.8f; //radius
+	GLfloat twicePi12 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3ub(243, 156, 18); // orange
+	glVertex2f(x12, y12);	  // center of circle
+	for (i12 = 0; i12 <= triangleAmount12; i12++)
+	{
+		glVertex2f(
+			x12 + (radius12 * cos(i12 * twicePi12 / triangleAmount12)),
+			y12 + (radius12 * sin(i12 * twicePi12 / triangleAmount12)));
+	}
+	glEnd();
+
+	// circle-3 --- bird eye
+	int i112;
+	GLfloat x112 = .65f;
+	GLfloat y112 = .62f;
+	GLfloat radius112 = .005f;
+	int triangleAmount112 = 20; // # of triangles used to draw circle
+
+	// GLfloat radius = 0.8f; //radius
+	GLfloat twicePi112 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3ub(39, 55, 70); // black
+	glVertex2f(x112, y112); // center of circle
+	for (i112 = 0; i112 <= triangleAmount112; i112++)
+	{
+		glVertex2f(
+			x112 + (radius112 * cos(i112 * twicePi112 / triangleAmount112)),
+			y112 + (radius112 * sin(i112 * twicePi112 / triangleAmount112)));
+	}
+	glEnd();
+
+	// bird right wing
+	glBegin(GL_TRIANGLES);
+	glColor3ub(248, 196, 113); // light orange
+	glVertex2f(0.6f, 0.62f);
+	glVertex2f(0.55f, 0.65f);
+	glVertex2f(0.6f, 0.6f);
+	glEnd();
+
+	glPopMatrix();
+	glFlush();
+}
 //GLfloat positionCloud1 = 0.4f;
 //GLfloat speed = 0.009f; //declared globally for every movable object... ... ...SPEED... ... ...!!! !!! !!!
 
@@ -1105,6 +1351,13 @@ void evening(){
 	glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
 
     //----front()--------------;
+    eveningSky();
+    eveningRiver();
+    eveningBeach();
+    boat1();
+    boat2();
+
+
 
     glColor3ub(238 ,173,14);
 	int j;
@@ -1125,15 +1378,11 @@ void evening(){
 		}
 	glEnd();
 
-	eveningBeach();
-	eveningSky();
-    eveningRiver();
+	bird1();
+	bird2();
+	hotBellon();
+	chair();
     Bigtree();
-    boat1();
-    hotBellon();
-
-    chair();
-    boat2();
 
 
 	glFlush();
@@ -1722,6 +1971,8 @@ int main(int argc, char** argv) {
     glutKeyboardFunc(handleKeypress);
     glutTimerFunc(100, updateCloud1, 0);
     glutTimerFunc(100, updateCloud2, 0);
+    glutTimerFunc(100, updateBird, 0);
+	glutTimerFunc(100, updateBird2, 0);
     glutTimerFunc(100, updateRain, 0);
     glutTimerFunc(100, updateBoat1, 0);
     glutTimerFunc(100, updateBoat2, 0);
